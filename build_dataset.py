@@ -13,9 +13,9 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
-FILE_PATH = "/home/spragunr/nobackup/data/teleband-export/teleband_downloads"
-OUT_FILE_PATH = "/home/spragunr/nobackup/data/teleband-export/teleband_wavs"
-DATA_CSV = "/home/spragunr/nobackup/data/teleband-export/_select_from_teachers_where_id_13_and_id_not_in_21_23_24_25_26_s_202306061508.csv"
+FILE_PATH = "/cs/home/stu/greer2jl/Documents/teleband-export/teleband-export/teleband_downloads"
+OUT_FILE_PATH = "/cs/home/stu/greer2jl/Documents/teleband-export/teleband-export/teleband_wavs"
+DATA_CSV = "/cs/home/stu/greer2jl/Documents/teleband-export/teleband-export/_select_from_teachers_where_id_13_and_id_not_in_21_23_24_25_26_s_202306061508.csv"
 
 
 def show_score_histograms(df):
@@ -114,8 +114,7 @@ def main():
     print(df)
 
     df = remove_bad_recordings(df)
-    ds = build_dataset(df)
-
+    ds = build_dataset(df, True)
     if False:
         show_score_histograms(df)
 
