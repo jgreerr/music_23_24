@@ -13,10 +13,14 @@ MP3_PATH = "/cs/home/stu/greer2jl/Documents/teleband-export/teleband-export/tele
 p_data, p_sr = librosa.load(f'{PLAYING_SAMPLE_PATH}{PIECE_TITLE}.mp3')
 
 dataset = datasets.load_from_disk(PROCESSED_DATASET_PATH)
-dataset = dataset.filter(lambda a : a["title"] == PIECE_TITLE )
+print(dataset[0])
 
+dataset = dataset.filter(lambda a : a["title"] == PIECE_TITLE and a["rhythm"] == 5)
+
+
+print(dataset[0])
 #loading the actual mp3 file with libroas
-s_data, s_sr = dataset[0]["key"]["array"], dataset[0]["key"]["sampling_rate"]
+s_data, s_sr = dataset[1]["key"]["array"], dataset[1]["key"]["sampling_rate"]
 
 
 
