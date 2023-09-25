@@ -81,7 +81,7 @@ def remove_bad_recordings(df):
 def build_dataset(df, gen_wavs=False):
     if gen_wavs:
         for i in range(df.shape[0]):
-            sound = pydub.AudioSegment.from_file(FILE_PATH + "/" + df.iloc[0]["key"])
+            sound = pydub.AudioSegment.from_file(FILE_PATH + "/" + df.iloc[i]["key"])
             sound.export(OUT_FILE_PATH + "/" + df.iloc[i]["key"] + ".mp3", format="mp3")
 
     df["key"] = df["key"].apply(lambda x: OUT_FILE_PATH + "/" + x + ".mp3")
