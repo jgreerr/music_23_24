@@ -15,7 +15,7 @@ playing_sample_data, playing_sample_sr = librosa.load(f'{PLAYING_SAMPLE_PATH}{PI
 dataset = datasets.load_from_disk(PROCESSED_DATASET_PATH)
 bad_score = dataset.filter(lambda a : a["title"] == PIECE_TITLE and a["rhythm"] == 2)[0]
 good_score = dataset.filter(lambda a : a["title"] == PIECE_TITLE and a["rhythm"] == 5)[0]
-print(good_score)
+print(dataset)
 
 #loading the actual mp3 file with libroas
 bad_data, bad_sr = bad_score["key"]["array"], bad_score["key"]["sampling_rate"]
